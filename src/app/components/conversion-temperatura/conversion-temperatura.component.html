@@ -1,7 +1,7 @@
 <form>
   <div class="mb-3">
     <label  class="form-label ">Ingrese el valor que desea convertir</label>
-    <input type="text" class="form-control" id="valor">
+    <input type="number" class="form-control" id="valor" min="1">
   </div>
   <div>
   <button (click)="conversionAFahrenheit(valor)"
