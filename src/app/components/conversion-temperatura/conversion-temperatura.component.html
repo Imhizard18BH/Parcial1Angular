@@ -1,0 +1,12 @@
+<form>
+  <div class="mb-3">
+    <label  class="form-label ">Ingrese el valor que desea convertir</label>
+    <input type="text" class="form-control" id="valor">
+  </div>
+  <div>
+  <button (click)="conversionAFahrenheit(valor)"
+          type="submit" class="btn btn-primary me-3">convertir a Fahrenheit</button>
+    <button (click)="conversionACentigrados(valor)"
+            type="submit" class="btn btn-primary">convertir a Centigrados</button>
+  </div>
+</form>
