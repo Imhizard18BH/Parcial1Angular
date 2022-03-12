@@ -19,6 +19,12 @@ export class ParqueaderoComponent implements OnInit {
   }
 
   calcularCargos(){
-    this.cuota=this._parqueaderoService.calcularCargos(this.horaEntrada,this.horaSalida);
+    if(this.horaEntrada>= 25 || this.horaSalida>=25){
+      alert("No se puede calcular correctamente")
+    }else if(this.horaEntrada>this.horaSalida){
+      alert("No se puede registrar una hora de llegada mayor al de salida")
+    }else{
+      this.cuota=this._parqueaderoService.calcularCargos(this.horaEntrada,this.horaSalida);
+    }
   }
 }
