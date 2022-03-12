@@ -8,15 +8,17 @@ import {Router} from "@angular/router";
   styleUrls: ['./parqueadero.component.css']
 })
 export class ParqueaderoComponent implements OnInit {
-  @Input() horaEntrada: number=0;
-  @Input() horaSalida: number=0;
+  horaEntrada: number=0;
+  horaSalida: number=0;
+  cuota: number=0;
+  fecha:number=0;
 
   constructor(private _parqueaderoService:parqueaderoService,private router:Router) { }
 
   ngOnInit():void {
   }
 
-  calcularCargos(horaEntrada:number,horaSalida:number){
-    this.router.navigate(['/parqueadero/',horaEntrada,horaSalida]);
+  calcularCargos(){
+    this.cuota=this._parqueaderoService.calcularCargos(this.horaEntrada,this.horaSalida);
   }
 }

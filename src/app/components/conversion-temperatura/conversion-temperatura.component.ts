@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {parqueaderoService} from "../../services/parqueadero.service";
+import {Router} from "@angular/router";
+import {conversionService} from "../../services/conversion.service";
 
 @Component({
   selector: 'app-conversion-temperatura',
@@ -7,14 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConversionTemperaturaComponent implements OnInit {
   valor:number=0;
-  constructor() { }
+  resultado:number=0;
+  constructor(private _conversionService:conversionService,private router:Router) { }
 
   ngOnInit(): void {
   }
-  conversionAFahrenheit(valor:number){
-
+  conversionAFahrenheit(){
+  this.resultado=this._conversionService.conversionAFahrenheit(this.valor);
+  return this.valor;
  }
- conversionACentigrados(valor:number){
-
+ conversionACentigrados(){
+  this.resultado=this._conversionService.conversionACentigrados(this.valor);
+  return this.valor;
  }
 }

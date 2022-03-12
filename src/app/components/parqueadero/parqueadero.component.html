@@ -1,17 +1,29 @@
 <form>
   <div class="mb-3">
     <label  class="form-label">Ingrese la hora hora de entrada</label>
-    <input type="text" class="form-control" id="horaEntrada" min="1">
+    <input type="text" class="form-control" id="horaEntrada" name="horaEntrada" [(ngModel)]="horaEntrada">
   </div>
   <div class="mb-3">
     <label class="form-label">Ingrese la hora de salida</label>
-    <input type="number" class="form-control" id="horaSalida" min="1">
+    <input type="number" class="form-control" id="horaSalida" name="horaSalida" [(ngModel)]="horaSalida">
   </div>
   <div class="mb-3">
     <label class="form-label">Ingrese la fecha</label>
-    <input type="number" class="form-control" id="fecha" min="1">
+    <input type="text" class="form-control" id="fecha" min="1" name="Fecha" [(ngModel)]="fecha">
   </div>
-  <button (click)="calcularCargos(horaEntrada,horaSalida)"
+  <button (click)="calcularCargos()"
           type="submit" class="btn btn-primary">Calcular pago</button>
 </form>
+<br>
+<div class="container" style="background-color: bisque" >
 
+  <div class="row">
+    <div class="col">
+      <div>
+        <h1>La cuota que debe pagar el vehiculo ingresado en la fecha {{fecha}}</h1>
+        <h3>{{cuota | currency:'COP '}} </h3>
+      </div>
+    </div>
+  </div>
+
+</div>

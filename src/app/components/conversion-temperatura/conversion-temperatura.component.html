@@ -1,12 +1,25 @@
 <form>
   <div class="mb-3">
-    <label  class="form-label ">Ingrese el valor que desea convertir</label>
-    <input type="number" class="form-control" id="valor" min="1">
+    <label  class="form-label">Ingrese el valor que desea convertir</label>
+    <input type="number" class="form-control" id="valor" min="1" name="valor" [(ngModel)]="valor">
   </div>
   <div>
-  <button (click)="conversionAFahrenheit(valor)"
+  <button (click)="conversionAFahrenheit()"
           type="submit" class="btn btn-primary me-3">convertir a Fahrenheit</button>
-    <button (click)="conversionACentigrados(valor)"
+    <button (click)="conversionACentigrados()"
             type="submit" class="btn btn-primary">convertir a Centigrados</button>
   </div>
 </form>
+<br>
+<div class="container" style="background-color: bisque" >
+
+  <div class="row">
+    <div class="col">
+      <div>
+        <h1>Resultado</h1>
+        <h3>{{resultado}} </h3>
+      </div>
+    </div>
+  </div>
+
+</div>

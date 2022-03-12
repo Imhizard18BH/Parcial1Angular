@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import {APP_ROUTING} from "./app.routes";
 import {parqueaderoService} from "./services/parqueadero.service";
 import {conversionService} from "./services/conversion.service";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {conversionService} from "./services/conversion.service";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    APP_ROUTING
+    APP_ROUTING,
+    FormsModule
   ],
   providers: [parqueaderoService,conversionService],
   bootstrap: [AppComponent]
